@@ -19,15 +19,12 @@ const galleryById = document.getElementById("gallery");
 galleryById.style.display = "flex";
 galleryById.style.alignItems = "center";
 galleryById.style.justifyContent = "space-between";
+galleryById.style.listStyle = "none";
 
-const createItem = images.map((image) => {
-  const liElem = document.createElement("li");
-  liElem.style.listStyle = "none";
-  liElem.style.marginRight = "20px";
-  liElem.insertAdjacentHTML(
-    "afterbegin",
-    `<img src="${image.url}" alt="${image.alt}" width='400px'>`
-  );
-  return liElem;
-});
-galleryById.append(...createItem);
+const createItem = images.reduce((string, image) => {
+  return (image.innerHTML =
+    string +
+    `<li><img src="${image.url}" alt="${image.alt}" width='400px'></li>`);
+}, "");
+
+galleryById.insertAdjacentHTML("afterbegin", createItem);

@@ -3,13 +3,11 @@ const inputEl = document.querySelector("input");
 inputEl.addEventListener("focus", contentCheck);
 
 function contentCheck(textInInput) {
-  if (textInInput.currentTarget.value.length >= 6) {
-    inputEl.classList.add("invalid");
-  } else {
+  if (textInInput.currentTarget.value.length >= inputEl.dataset.length) {
+    inputEl.classList.remove("invalid");
     inputEl.classList.add("valid");
+  } else {
+    inputEl.classList.remove("valid");
+    inputEl.classList.add("invalid");
   }
-
-  // textInInput.currentTarget.value.length >= 6
-  //   ? inputEl.classList.add('invalid')
-  //   : inputEl.classList.add('valid');
 }

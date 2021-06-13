@@ -1,8 +1,8 @@
-const inputEl = document.getElementById('font-size-control');
+const inputEl = document.getElementById("font-size-control");
+const textInSpan = document.getElementById("text");
 
-inputEl.addEventListener('input', changeStyleText);
+inputEl.addEventListener("input", changeStyleText);
 
 function changeStyleText(rangeValue) {
-  const textInSpan = document.getElementById('text');
-  textInSpan.style.fontSize = rangeValue.currentTarget.value + 'px';
+  textInSpan.style.fontSize = rangeValue.currentTarget.value + "px";
 }

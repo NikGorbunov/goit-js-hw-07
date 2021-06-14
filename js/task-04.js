@@ -1,16 +1,23 @@
-const counterValue = document.getElementById("value");
-const decrementEl = document.querySelector("[data-action=decrement]");
-const incrementEl = document.querySelector("[data-action=increment]");
+const counterValueEl = document.getElementById("value");
+const incrementButtonEl = document.querySelector(
+  '#counter button[data-action="increment"]'
+);
+const decrementButtonEl = document.querySelector(
+  '#counter button[data-action="decrement"]'
+);
 
-decrementEl.addEventListener("click", decrement);
-incrementEl.addEventListener("click", increment);
+decrementButtonEl.addEventListener("click", onDecrementBtnClick);
+incrementButtonEl.addEventListener("click", onIncrementBtnClick);
 
-const NUM = 1;
-
-function decrement() {
-  counterValue.textContent = Number(counterValue.textContent) - NUM;
+function onDecrementBtnClick() {
+  counterValueEl.textContent = Number(counterValueEl.textContent) - 1;
 }
 
-function increment() {
-  counterValue.textContent = Number(counterValue.textContent) + NUM;
+function onIncrementBtnClick() {
+  counterValueEl.textContent = Number(counterValueEl.textContent) + 1;
 }
+// В задании 4 пользователь может сломать логику счетчика,
+//   если зайдет через инструменты разработчика и поменяет вручную значение спана с id = "value".
+// Такой возможности быть не должно.Заведите отдельную переменную(число),
+//   значение которой увеличивается / уменьшается на 1(при клике на соответсвующую кнопку),
+//   и записывайте это значение в textContent спана с id = "value".

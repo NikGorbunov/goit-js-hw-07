@@ -10,11 +10,11 @@ decrementButtonEl.addEventListener("click", onDecrementBtnClick);
 incrementButtonEl.addEventListener("click", onIncrementBtnClick);
 
 function onDecrementBtnClick() {
-  counterValueEl.textContent = Number(counterValueEl.textContent) - 1;
+  counterValueEl.textContent--;
 }
 
 function onIncrementBtnClick() {
-  counterValueEl.textContent = Number(counterValueEl.textContent) + 1;
+  counterValueEl.textContent++;
 }
 // В задании 4 пользователь может сломать логику счетчика,
 //   если зайдет через инструменты разработчика и поменяет вручную значение спана с id = "value".
